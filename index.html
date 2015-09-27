@@ -41,13 +41,6 @@
 
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
-  <article data-timings="">
-    
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-2" style="background:;">
   <hgroup>
     <h2>Iris Flower Family Predictor operation</h2>
   </hgroup>
@@ -70,58 +63,25 @@
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-3" style="background:;">
+<slide class="" id="slide-2" style="background:;">
   <hgroup>
-    <h2>Iris Family</h2>
+    <h2>Operation</h2>
   </hgroup>
   <article data-timings="">
     <p>The predictor will calculate and predict the family the considered flower would belong to.
 Iris is a genus of 260-300[1][2] species of flowering plants with showy flowers. It takes its name from the Greek word for a rainbow, which is also the name for the Greek goddess of the rainbow, Iris.
 The Iris genera is subclassified based on the sepal and petal dimensions. To calculate this data the predictor application can be used.</p>
 
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-4" style="background:;">
-  <hgroup>
-    <h2>Operation</h2>
-  </hgroup>
-  <article data-timings="">
-    <p>Below is the operation of the predictor</p>
+<p>Below is the operation of the predictor</p>
 
 <pre><code class="r">library(caret)
-</code></pre>
-
-<pre><code>## Warning: package &#39;caret&#39; was built under R version 3.1.3
-</code></pre>
-
-<pre><code>## Loading required package: lattice
-## Loading required package: ggplot2
-</code></pre>
-
-<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 3.1.2
-</code></pre>
-
-<pre><code class="r">tempTrain &lt;- createDataPartition(y=iris$Species, p=0.7, list=FALSE)
+tempTrain &lt;- createDataPartition(y=iris$Species, p=0.7, list=FALSE)
 
   forTraining &lt;- iris[tempTrain,] 
   forTesting &lt;- iris[-tempTrain,]
 
   require(randomForest)
-</code></pre>
-
-<pre><code>## Loading required package: randomForest
-</code></pre>
-
-<pre><code>## Warning: package &#39;randomForest&#39; was built under R version 3.1.3
-</code></pre>
-
-<pre><code>## randomForest 4.6-10
-## Type rfNews() to see new features/changes/bug fixes.
-</code></pre>
-
-<pre><code class="r">  set.seed(12345)
+  set.seed(12345)
 
   rfTraining=randomForest(Species~.,data=forTraining,ntree=100, importance=TRUE)
 </code></pre>
@@ -130,7 +90,7 @@ The Iris genera is subclassified based on the sepal and petal dimensions. To cal
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-5" style="background:;">
+<slide class="" id="slide-3" style="background:;">
   <article data-timings="">
     <p>The prediction model analysis</p>
 
@@ -144,19 +104,19 @@ The Iris genera is subclassified based on the sepal and petal dimensions. To cal
 ##                      Number of trees: 100
 ## No. of variables tried at each split: 2
 ## 
-##         OOB estimate of  error rate: 4.76%
+##         OOB estimate of  error rate: 8.57%
 ## Confusion matrix:
 ##            setosa versicolor virginica class.error
-## setosa         35          0         0  0.00000000
-## versicolor      0         33         2  0.05714286
-## virginica       0          3        32  0.08571429
+## setosa         35          0         0   0.0000000
+## versicolor      0         31         4   0.1142857
+## virginica       0          5        30   0.1428571
 </code></pre>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-6" style="background:;">
+<slide class="" id="slide-4" style="background:;">
   <hgroup>
     <h2>Thank you</h2>
   </hgroup>
@@ -175,38 +135,26 @@ The Iris genera is subclassified based on the sepal and petal dimensions. To cal
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='NA'>
+        data-slide=1 title='Iris Flower Family Predictor operation'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Iris Flower Family Predictor operation'>
+        data-slide=2 title='Operation'>
          2
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='Iris Family'>
+        data-slide=3 title='NA'>
          3
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='Operation'>
+        data-slide=4 title='Thank you'>
          4
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=5 title='NA'>
-         5
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=6 title='Thank you'>
-         6
       </a>
     </li>
   </ul>

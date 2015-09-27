@@ -5,8 +5,6 @@ date: "Sunday, September 27, 2015"
 output: slidy_presentation
 ---
 
----
-
 ## Iris Flower Family Predictor operation
 
 The application consists of a left panel with four sliders, for petal length width and sepal length and width. 
@@ -24,58 +22,25 @@ This famous (Fisher's or Anderson's) iris data set gives the measurements in cen
 Further details can be obtained from the documentation of iris data set.
 
 
+
 ---
-## Iris Family
+
+## Operation
 
 The predictor will calculate and predict the family the considered flower would belong to.
 Iris is a genus of 260-300[1][2] species of flowering plants with showy flowers. It takes its name from the Greek word for a rainbow, which is also the name for the Greek goddess of the rainbow, Iris.
 The Iris genera is subclassified based on the sepal and petal dimensions. To calculate this data the predictor application can be used.
 
----
-
-## Operation
 Below is the operation of the predictor
 
 ```r
 library(caret)
-```
-
-```
-## Warning: package 'caret' was built under R version 3.1.3
-```
-
-```
-## Loading required package: lattice
-## Loading required package: ggplot2
-```
-
-```
-## Warning: package 'ggplot2' was built under R version 3.1.2
-```
-
-```r
 tempTrain <- createDataPartition(y=iris$Species, p=0.7, list=FALSE)
   
   forTraining <- iris[tempTrain,] 
   forTesting <- iris[-tempTrain,]
   
   require(randomForest)
-```
-
-```
-## Loading required package: randomForest
-```
-
-```
-## Warning: package 'randomForest' was built under R version 3.1.3
-```
-
-```
-## randomForest 4.6-10
-## Type rfNews() to see new features/changes/bug fixes.
-```
-
-```r
   set.seed(12345)
   
   rfTraining=randomForest(Species~.,data=forTraining,ntree=100, importance=TRUE)
@@ -97,12 +62,12 @@ rfTraining
 ##                      Number of trees: 100
 ## No. of variables tried at each split: 2
 ## 
-##         OOB estimate of  error rate: 4.76%
+##         OOB estimate of  error rate: 8.57%
 ## Confusion matrix:
 ##            setosa versicolor virginica class.error
-## setosa         35          0         0  0.00000000
-## versicolor      0         33         2  0.05714286
-## virginica       0          3        32  0.08571429
+## setosa         35          0         0   0.0000000
+## versicolor      0         31         4   0.1142857
+## virginica       0          5        30   0.1428571
 ```
 
 ---
